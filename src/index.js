@@ -4,6 +4,32 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter as Router } from 'react-router-dom';
+import { Amplify } from 'aws-amplify';
+require('dotenv').config()
+
+Amplify.configure({
+  Auth: {
+    mandatorySignIn: true,
+    region: process.env.REGION,
+    userPoolId: process.env.USER_POOL_ID,
+    identityPoolId:process.env.IDENTITY_POOL_ID,
+    userPoolWebClientId:process.env.APP_CLIENT_ID
+  },
+  Storage: {
+    region: config.s3.REGION,
+    bucket: config.s3.BUCKET,
+    identityPoolId:process.env.IDENTITY_POOL_ID
+  },
+  API: {
+    endpoints: [
+      {
+        name: "products",
+        endpoint: config.apiGateway.URL,
+        region: config.apiGateway.REGION
+      },
+    ]
+  }
+});
 
 ReactDOM.render(
   <React.StrictMode>
