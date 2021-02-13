@@ -16,16 +16,16 @@ Amplify.configure({
     userPoolWebClientId:process.env.APP_CLIENT_ID
   },
   Storage: {
-    region: config.s3.REGION,
-    bucket: config.s3.BUCKET,
-    identityPoolId:process.env.IDENTITY_POOL_ID
+    region: process.env.REGION,
+    bucket: process.env.BUCKET,
+    identityPoolId: process.env.IDENTITY_POOL_ID
   },
   API: {
     endpoints: [
       {
         name: "products",
-        endpoint: config.apiGateway.URL,
-        region: config.apiGateway.REGION
+        endpoint: process.env.URL,
+        region: process.env.REGION
       },
     ]
   }
@@ -42,4 +42,4 @@ ReactDOM.render(
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
 // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+// reportWebVitals();
