@@ -7,7 +7,7 @@ export default function Home() {
     <div className="Home">
       <div className="lander">
         <img src={shoppingCartIcon} className="shopping-cart-icon" />
-        <h1>E-Commerce Site</h1>
+        <h1>E-Commerce Store</h1>
         <p className="text-muted">A place to sell something</p>
       </div>
     </div>
