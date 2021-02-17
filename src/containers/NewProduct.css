@@ -1,4 +1,17 @@
 .NewProduct form textarea {
-  height: 300px;
-  font-size: 1.5rem;
+  height: 200px;
+}
+
+.NewProduct form input, .NewProduct form textarea {
+  font-size: 1.1rem;
+}
+
+.new-product-page{
+  float: left;
+}
+
+.NewProduct, 
+
+.card{
+  width: 30em;
 }
